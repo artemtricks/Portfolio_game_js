@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(218, 162, 255, 0.801) ;
+}
+
+.resetGame {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 9%;
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: blueviolet;
+  cursor: pointer;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  color: #fff;
+  transition: background-color, 0.3s ease-in-out;
+}
+
+.resetGame:hover {
+  background-color: rgb(163, 91, 230);
+}
+
+.resetGame:active {
+  background-color: rgb(113, 7, 212);
+}
+
+.game {
+  width: 500px;
+  height: 630px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  transform: scale(1);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+
+.front-side,
+.back-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(235, 235, 235);
+  border-radius: 15px;
+  backface-visibility: hidden;
+
+}
+
+.front-side {
+  transform: rotateY(180deg);
+  padding: 10px;
+}
