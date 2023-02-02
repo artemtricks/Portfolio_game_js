@@ -16,14 +16,14 @@ const flipCard = e => {
   if (target === firstCard) return;
 
   target.classList.add('flip');
-//console.log(target.dataset.pic)
+
     if (!hasFlippedCard) {
-      // Первый клик
+      
       hasFlippedCard = true;
       firstCard = target;
-      //console.log(target)
+      
     } else {
-     //Второй клик
+     
 
       hasFlippedCard = false;
       secondCard = target;
@@ -36,7 +36,7 @@ const flipCard = e => {
   const checkForMatch = () => {
     const isEqual = firstCard.dataset.pic === secondCard.dataset.pic
     isEqual ? disableCards() : unflipCards();
-    //console.log(isEqual)
+    
     if (isEqual == true) {
       countMatch.push(isEqual)
     }  if (countMatch.length > 7) {
@@ -72,7 +72,7 @@ const flipCard = e => {
   button.textContent = 'Начать заново';
   let container = document.querySelector('.container');
 
-// перезагрузка игры
+
   function refreshPage(){
     window.location.reload();
 }
